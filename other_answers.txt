@@ -1,0 +1,27 @@
+class SongsController < ApplicationController
+  def search
+    # .find() is only for finding by id
+    # .find_by() returns only one song
+    # .where() returns an area of songs
+
+    @songs = Song.where(title: params[:query])
+  end
+end
+
+class SongsController < ApplicationController
+  def search
+    @songs = Song.where(title: params[:name]
+  end
+end
+
+# New song
+<form action="/songs" method="post">
+  <input type="text" name="song[title]" value=" ">
+  <input type="submit" value="Create song">
+</form>
+
+#Edit song
+<form action="/songs/18" method="patch">
+  <input type="text" name="song[title]" value="Hey jude"/>
+  <input type="submit" value="Update song"/>
+</form>
